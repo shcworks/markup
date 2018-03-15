@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>summary</title>
+	<link rel="stylesheet" href="./resource/css/common.css">
+	<style>
+		.guide_box {
+			padding: 20px 0;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.title {
+			margin: 20px 0 10px;
+			font-size: 16px;
+			color: #222;
+			text-decoration: underline;
+		}
+
+		p.title:first-child {
+			margin-top: 0;
+		}
+
+		dl {
+			position: relative;
+			margin-top: 10px;
+		}
+
+		dl:first-child {
+			margin-top: 0;
+		}
+
+		dt,
+		dd {
+			font-size: 14px;
+			line-height: 20px;
+			color: #777;
+			vertical-align: middle;
+		}
+
+		dt {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0 20px;
+			width: 250px;
+			box-sizing: border-box;
+		}
+
+		dd {
+			display: block;
+			padding-left: 250px;
+		}
+		
+		/* css3 selector */
+		.start_v dd[class|="apple"] span,
+		.start_w dd[class^="apple"] span,
+		.end_w dd[class$="apple"] span,
+		.contain_v dd[class~="apple"] span,
+		.contain_w dd[class*="apple"] span {
+			background-color: yellow;
+		}
+
+		dd.trans_2d:before,
+		dd.trans_3d:before {
+			display: inline-block;
+			margin-right: 10px;
+			vertical-align: top;
+		}
+
+		dd.trans_2d:before {
+			content: '[2D]';
+		}
+
+		dd.trans_3d:before {
+			content: '[3D]';
+		}
+		
+		dd.point:before{
+			display: inline-block;
+			content: '*';
+			margin-right: 5px;
+			color: red;
+			vertical-align: top;
+		}
+
+		dt em,
+		dd em {
+			color: #333;
+			vertical-align: top;
+		}
+
+		dd sub {
+			margin-left: 10px;
+			font-size: smaller;
+			text-decoration: underline;
+			vertical-align: bottom;
+		}
+
+		dt:before {
+			display: inline-block;
+			content: '-';
+			margin-right: 5px;
+			vertical-align: top;
+		
+	</style>
+</head>
+<body>
+	<div class="guide_box">
+		<p class="title">css selector</p>
+		<dl class="start_v">
+			<dt>[attribute|="value"]<br>a whole word, either alone, or followed by a hyphen( - )<br>starting with the specified value.</dt>
+			<dd class="apple"><span>class="apple"</span></dd>
+			<dd class="apple-pie"><span>class="apple-pie"</span></dd>
+			<dd class="apple_pie"><span>class="apple_pie"</span></dd>
+			<dd class="apples"><span>class="apples"</span></dd>
+			<dd class="apple banana"><span>class="apple banana"</span></dd>
+		</dl>
+		<dl class="start_w">
+			<dt>[attribute^="value"]<br>begining with the specified word.</dt>
+			<dd class="apple"><span>class="apple"</span></dd>
+			<dd class="apple-pie"><span>class="apple-pie"</span></dd>
+			<dd class="apple_pie"><span>class="apple_pie"</span></dd>
+			<dd class="apples"><span>class="apples"</span></dd>
+			<dd class="apple banana"><span>class="apple banana"</span></dd>
+		</dl>
+		<dl class="end_w">
+			<dt>[attribute$="value"]<br>ending with the specified word.</dt>
+			<dd class="apple"><span>class="apple"</span></dd>
+			<dd class="green-apple"><span>class="green-apple"</span></dd>
+			<dd class="green_apple"><span>class="green_apple"</span></dd>
+			<dd class="pineapple"><span>class="pineapple"</span></dd>
+			<dd class="banana apple"><span>class="banana apple"</span></dd>
+		</dl>
+		<dl class="contain_v">
+			<dt>[attribute~="value"]<br>containing a specified value.</dt>
+			<dd class="apple"><span>class="apple"</span></dd>
+			<dd class="green-apple"><span>class="green-apple"</span></dd>
+			<dd class="green_apple"><span>class="green_apple"</span></dd>
+			<dd class="pineapple"><span>class="pineapple"</span></dd>
+			<dd class="apples"><span>class="apples"</span></dd>
+			<dd class="apple banana"><span>class="apple banana"</span></dd>
+			<dd class="banana apple"><span>class="banana apple"</span></dd>
+		</dl>
+		<dl class="contain_w">
+			<dt>[attribute*="value"]<br>containing a specified word.</dt>
+			<dd class="apple"><span>class="apple"</span></dd>
+			<dd class="green-apple"><span>class="green-apple"</span></dd>
+			<dd class="green_apple"><span>class="green_apple"</span></dd>
+			<dd class="pineapple"><span>class="pineapple"</span></dd>
+			<dd class="apples"><span>class="apples"</span></dd>
+			<dd class="apple banana"><span>class="apple banana"</span></dd>
+			<dd class="banana apple"><span>class="banana apple"</span></dd>
+		</dl>
+
+		<p class="title">transform</p>
+		<dl>
+			<dt>translate</dt>
+			<dd class="trans_2d">translate(position, position)</dd>
+			<dd class="trans_3d">translateX(), translateY(), translateZ(), translate3d(x,y,z)</dd>
+		</dl>
+		<dl>
+			<dt>scale</dt>
+			<dd class="trans_2d">scale(rate, rate)</dd>
+			<dd class="trans_3d">scaleX(), scaleY(), scaleZ(), scale3d(x,y,z)</dd>
+		</dl>
+		<dl>
+			<dt>rotate</dt>
+			<dd class="trans_2d">rotate(deg)</dd>
+			<dd class="trans_3d">rotateX(), rotateY(), rotateZ(), rotate3d(x, y, z, deg)</dd>
+			<dd><em>rotate() = rotateZ()</em></dd>
+			<dd><em>rotate3d(x, y, z, deg) :: x,y,z = 0 or 1</em></dd>
+			<dd class="point">transform-origin (-ms-, ie9)</dd>
+			<dd class="point">transform-style : flat / preserve-3d (ie11)</dd>
+			<dd class="point">backface-visibility : visible / hidden (ie10)</dd>
+			<dd class="point">perspective (ei10)<sub>how far the object is away from the user</sub></dd>
+		</dl>
+		<dl>
+			<dt>skew</dt>
+			<dd class="trans_2d">skewX(), skewY(), skew(x, y)</dd>
+		</dl>
+
+		<p class="title">transition</p>
+		<dl>
+			<dt>transition</dt>
+			<dd><em>(ie10)</em></dd>
+		</dl>
+		<dl>
+			<dt>transition-property</dt>
+			<dd>all / specified property / transform ;</dd>
+		</dl>
+		<dl>
+			<dt>transition-duration</dt>
+			<dd>time</dd>
+		</dl>
+		<dl>
+			<dt>transition-timing-function</dt>
+			<dd>linear / ease / ease-in / ease-out / ease-in-out</dd>
+		</dl>
+		<dl>
+			<dt>transition-delay</dt>
+			<dd>time</dd>
+		</dl>
+
+		<p class="title">animation</p>
+		<dl>
+			<dt>animation</dt>
+			<dd><em>(ie10)</em></dd>
+		</dl>
+		<dl>
+			<dt>animation-name</dt>
+			<dd>@keyframs name</dd>
+		</dl>
+		<dl>
+			<dt>animation-duration</dt>
+			<dd>time</dd>
+		</dl>
+		<dl>
+			<dt>animation-delay</dt>
+			<dd>time</dd>
+		</dl>
+		<dl>
+			<dt>animation-iteration-count</dt>
+			<dd>number / infinite</dd>
+		</dl>
+		<dl>
+			<dt>animation-direction</dt>
+			<dd>normal / reverse / alternate / alternate-reverse <sub>alternate :: animation-iteration-count</sub></dd>
+		</dl>
+		<dl>
+			<dt><em>@keyframes</em></dt>
+			<dd><em>@keyframes name { from{}/to{} or 0%{}/100%{} }</em></dd>
+		</dl>
+	</div>
+</body>
+</html>

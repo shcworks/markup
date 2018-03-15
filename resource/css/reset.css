@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/* font */
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 300;
+    /**/
+    src: local('NotoSans Regular'), local('NotoSans Regular'), local('NotoSans Regular');
+    src: url(../font/NotoSans-Regular.eot);
+    src: url(../font/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSans-Regular.woff) format('woff'),
+        url(../font/NotoSans-Regular.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    /*src: local('NotoSans Regular'), local('NotoSans Regular'), local('NotoSans Regular');*/
+    src: url(../font/NotoSans-Regular.eot);
+    src: url(../font/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSans-Regular.woff) format('woff'),
+        url(../font/NotoSans-Regular.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    /*src: local('NotoSans Bold'), local('NotoSans Bold'), local('NotoSans Bold');*/
+    src: url(../font/NotoSans-Bold.eot);
+    src: url(../font/NotoSans-Bold.eot?#iefix) format('embedded-opentype'),
+        url(../font/NotoSans-Bold.woff) format('woff'),
+        url(../font/NotoSans-Bold.otf) format('truetype');
+}
+
+/* reset */
+html, body, div, span, iframe, 
+h1, h2, h3, h4, h5, h6, p, a, strong, em, sub, sup,
+blockquote, address, del, q, b, u, i, img, 
+dl, dt, dd, ol, ul, li, 
+form, fieldset, legend, label, select, input, button,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	outline:0 none;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: middle;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	color: #666;
+	font-family: 'Noto Sans';
+	font-size: 14px;
+	line-height: 1;
+	letter-spacing: -.05em;
+	/* 아이폰 방향전환시 폰트사이즈 제어 */
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+/* html5 
+header, main, footer,
+nav, menu, section, article, aside, 
+details, summary, figure, figcaption{
+    display: block;
+}
+*/
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+legend, caption, .blind {
+	line-height: 0;
+	font-size: 0;
+	text-indent: -999px;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	background: none;
+	cursor: pointer;
+}
+
+
+label, .btn, select{
+	cursor: pointer;
+}
+
+textarea {
+	display: block;
+	font-family: 'Noto Sans';
+	box-sizing: border-box;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	background-color: #fff;
+	box-shadow: none;
+	resize: none;
+}
+
+input[type="text"], input[type="password"], input[type="number"], input[type="search"], input[type="email"] {
+	display: inline-block;
+	box-sizing: border-box;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	background-color: #fff;
+	box-shadow: none;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	visibility: hidden;
+}
+
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	background-color: #fff;
+}
+
+.align_left{
+	text-align: left !important;
+}
+
+.align_center{
+	text-align: center !important;
+}
+
+.align_right{
+	text-align: right !important;
+}
+
+button{
+	border: 0 none;
+	background: none;
+}
